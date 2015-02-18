@@ -5,33 +5,35 @@
 			 </div>
 	</div>
 	<div class="panel-body">
-		<%= form_for :clients, class: 'form form-vertical' do |f| %>
-			<div class="form-group">
-			  	<div class="controls">
-			  		<%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-			  	</div>
-			</div>      
-			<div class="form-group">
-			  	<div class="controls">
-			  		<%= f.text_field :mt4_id, class: 'form-control', placeholder: 'MT4 ID' %>
-			  	</div>
-			</div>
-			<div class="form-group">
-			    <div class="controls">
-			    	<%= f.text_field :capital_sold, class: 'form-control', placeholder: 'Capital Sold' %>
-			  	</div>
-			</div>    
-			<div class="form-group">
-			  	<div class="controls">
-			    	<div class="text-center">
-			    		<label></label>
-			    		<%= f.submit "Save", class:'btn btn-success' %>
-			    		<button type="reset" class="btn btn-primary">
-                      		Reset
-                    	</button>
-			 		</div>
-			  	</div>
-			</div>   
+		<%= form_for @client do |f| %>
+			<div class= "form form-vertical">
+				<div class="form-group">
+				  	<div class="controls">
+				  		<%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+				  	</div>
+				</div>      
+				<div class="form-group">
+				  	<div class="controls">
+				  		<%= f.text_field :mt4_id, class: 'form-control', placeholder: 'MT4 ID' %>
+				  	</div>
+				</div>
+				<div class="form-group">
+				    <div class="controls">
+				    	<%= f.text_field :capital_sold, class: 'form-control', placeholder: 'Capital Sold' %>
+				  	</div>
+				</div>    
+				<div class="form-group">
+				  	<div class="controls">
+				    	<div class="text-center">
+				    		<label></label>
+				    		<%= f.submit "Save", class:'btn btn-success' %>
+				    		<button type="reset" class="btn btn-primary">
+	                      		Reset
+	                    	</button>
+				 		</div>
+				  	</div>
+				</div> 
+			</div>  
 		<% end %>
 	</div><!--/panel content-->
 </div><!--/panel-->
