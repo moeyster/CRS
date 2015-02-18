@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <title>Commission Reporting System</title>
+	    <meta name="generator" content="Bootply" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+	    <!--[if lt IE 9]>
+	      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	    <link href="css/styles.css" rel="stylesheet">
+  	</head>
+  	<body>
+		<div class="container">
+			<div class="row">
+			    <%= render 'layouts/header' %>
+			  	<div class="col-sm-12">
+				    <%= render 'layouts/nav' %>
+			      	<div class="row">
+			        	<div class="col-sm-4">
+			        	</div>
+			        	<div class="col-sm-4">
+			          		<div class="panel panel-default">
+			            		<div class="panel-heading">
+			              			<div class="panel-title">
+			                			<h4 class="text-center">Add Tony's New Client</h4>
+			             			 </div>
+			            		</div>
+			            		<div class="panel-body">
+			              			<form class="form form-vertical">
+						                <div class="form-group">
+						                  	<div class="controls">
+						                    	<input type="text" class="form-control" placeholder="Name">
+						                  	</div>
+						                </div>      
+						                <div class="form-group">
+						                  	<div class="controls">
+						                    	<input type="text" class="form-control" placeholder="MT4 ID">
+						                  	</div>
+						                </div>
+						                <div class="form-group">
+							                <div class="controls">
+							                	<input type="text" class="form-control" placeholder="Capital Sold">
+						                  	</div>
+						                </div>    
+						                <div class="form-group">
+						                  	<div class="controls">
+						                    	<div class="text-center">
+						                    		<label></label>
+						                    		<button  type="submit" class="btn btn-success">
+						                      			Save
+						                    		</button>
+						                 		</div>
+						                  	</div>
+			                			</div>   
+			              			</form>
+		            			</div><!--/panel content-->
+			          		</div><!--/panel-->
+			        	</div>
+			        	<div class="col-sm-4">
+			        	</div>
+		  			</div><!--col-sm-4-->
+				</div><!--col-sm-12-->
+			</div><!--row-->
+		</div><!--container-->
+		<%= render 'layouts/footer' %>
+	  	<!-- script references -->
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	    <script>
+	        $(document).ready(function() {
+
+	        $('body').css('display', 'none');
+
+	        $('body').fadeIn(1000);
+
+
+
+	        $('.link').click(function() {
+
+	        event.preventDefault();
+
+	        newLocation = this.href;
+
+	        $('body').fadeOut(1000, newpage);
+
+	        });
+
+	        function newpage() {
+
+	        window.location = newLocation;
+
+	        }
+
+	        });
+	    </script>
+    </body>
+</html>

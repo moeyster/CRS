@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Bootstrap 3 Control Panel</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
-	</head>
-	<body>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Commission Reporting System</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
 <!-- Header -->
 
 <!-- /Header -->
@@ -23,29 +23,9 @@
   <!-- upper section -->
   <div class="row">
     <div class="col-sm-12">
-      <h3><i class="glyphicon glyphicon-dashboard"></i> CRS<small>v1.0</small> | <small>Welcome <strong>Tony</strong></small></h3>
-      <hr>
-    </div>
-	<div class="col-sm-12">
-    <div class="btn-group btn-group-justified">
-      <a href="#" class="btn btn-info col-sm-3">
-        <i class="glyphicon glyphicon-dashboard"></i><br>
-        Dashboard
-      </a>
-      <a href="#" class="btn btn-info col-sm-3">
-        <i class="glyphicon glyphicon-plus"></i><br>
-        Add Client
-      </a>
-      <a href="#" class="btn btn-info col-sm-3">
-        <i class="glyphicon glyphicon-user"></i><br>
-        Profile
-      </a>
-      <a href="#" class="btn btn-info col-sm-3">
-        <i class="glyphicon glyphicon-log-out"></i><br>
-        Logout  
-      </a>
-    </div>
-    <hr>
+      <%= render 'layouts/header' %>
+  <div class="col-sm-12">
+    <%= render 'layouts/nav' %>
     <div class="col-sm-12">
         <div class="well">
             25 Client Goal
@@ -57,7 +37,7 @@
          </div>
         </div>   
     <div class="col-sm-3">
-      <a href="#">
+      <a href="clientlistj.html">
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Jason</h4>
         </div>
@@ -71,7 +51,7 @@
     </a>
     </div>
     <div class="col-sm-3">
-      <a href="#">
+      <a href="clientliste.html">
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Eunice</h4>
         </div>
@@ -85,7 +65,7 @@
     </a>
     </div> 
     <div class="col-sm-3">
-      <a href="#">
+      <a href="clientlistt.html">
       <div class="panel panel-default">
         <div class="panel-heading"><h4>Tony</h4>
         </div>
@@ -99,7 +79,7 @@
     </a>
     </div>
     <div class="col-sm-3">
-      <a href="#">
+      <a href="clientlista.html">
       <div class="panel panel-default">
         <div class="panel-heading"><h4>All</h4>
         </div>
@@ -114,7 +94,7 @@
     </div>
 </div>
        
-            <!-- center left-->	
+            <!-- center left--> 
       
   
   <div class="row">
@@ -132,12 +112,39 @@
 <!-- /Main -->
 
 
-<footer class="text-center">This Bootstrap 3 dashboard layout is compliments of <a href="http://www.bootply.com/85850"><strong>Bootply.com</strong></a></footer>
+<%= render 'layouts/footer' %>
 
 
   
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
+  <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+        $('body').css('display', 'none');
+
+        $('body').fadeIn(1000);
+
+
+
+        $('.link').click(function() {
+
+        event.preventDefault();
+
+        newLocation = this.href;
+
+        $('body').fadeOut(1000, newpage);
+
+        });
+
+        function newpage() {
+
+        window.location = newLocation;
+
+        }
+
+        });
+    </script>
+  </body>
 </html>
