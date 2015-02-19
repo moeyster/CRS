@@ -22,43 +22,7 @@
 			        	<div class="col-sm-4">
 			        	</div>
 			        	<div class="col-sm-4">
-			          		<div class="panel panel-default">
-								<div class="panel-heading">
-										<div class="panel-title">
-										<h4 class="text-center">Edit Client Entry</h4>
-										 </div>
-								</div>
-								<div class="panel-body">
-									<%= form_for :client, url: agent_client_path(@client), method: :patch  do |f| %>
-										<div class= "form form-vertical">
-											<div class="form-group">
-											  	<div class="controls">
-											  		<%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-											  	</div>
-											</div>      
-											<div class="form-group">
-											  	<div class="controls">
-											  		<%= f.text_field :mt4_id, class: 'form-control', placeholder: 'MT4 ID' %>
-											  	</div>
-											</div>
-											<div class="form-group">
-											    <div class="controls">
-											    	<%= f.text_field :capital_sold, class: 'form-control', placeholder: 'Capital Sold' %>
-											  	</div>
-											</div>    
-											<div class="form-group">
-											  	<div class="controls">
-											    	<div class="text-center">
-											    		<label></label>
-											    		<%= f.submit "Update Details", class:'btn btn-success justified' %>
-											    		<%= link_to "Delete Client", agent_client_path, method: :delete,data: { confirm: "Are you sure you want to delete " + @client.name + "?" } , class:'btn btn-danger'%>
-											 		</div>
-											  	</div>
-											</div> 
-										</div>  
-									<% end %>
-								</div><!--/panel content-->
-							</div><!--/panel-->
+			          		<%= render 'agents/form' %>
 			        	</div>
 			        	<div class="col-sm-4">
 			        	</div>
