@@ -70,17 +70,18 @@
                         </div>
                         <div class="col-sm-3">
                             <a href="clientlista.html">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h4>All</h4>
+                            <%= link_to clients_path do %>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h4>All</h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p><small>Total Clients: </small></p>
+                                            <p><strong><%= @totalClients %></strong></p>
+                                            <p><small>Total Capital Sold: </small></p>
+                                            <p><strong><%= number_to_currency(@totalCapitalSold) %></strong></p>
+                                        </div>    
                                     </div>
-                                    <div class="panel-body">
-                                        <p><small>Total Clients: </small></p>
-                                        <p><strong>24</strong></p>
-                                        <p><small>Total Capital Sold: </small></p>
-                                        <p><strong>$30,000</strong></p>
-                                    </div>    
-                                </div>
-                            </a>
+                            <% end %>
                         </div>
                     </div><!--col-sm-12-->
                 </div><!--col-sm-12-->
