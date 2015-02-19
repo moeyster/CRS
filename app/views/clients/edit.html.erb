@@ -25,11 +25,11 @@
 			          		<div class="panel panel-default">
 								<div class="panel-heading">
 										<div class="panel-title">
-										<h4 class="text-center">Add Tony's New Client</h4>
+										<h4 class="text-center">Edit Client Entry</h4>
 										 </div>
 								</div>
 								<div class="panel-body">
-									<%= form_for(:client) do |f| %>
+									<%= form_for :client, url: client_path(@client), method: :patch  do |f| %>
 										<div class= "form form-vertical">
 											<div class="form-group">
 											  	<div class="controls">
@@ -50,10 +50,8 @@
 											  	<div class="controls">
 											    	<div class="text-center">
 											    		<label></label>
-											    		<%= f.submit "Save", class:'btn btn-success' %>
-											    		<button type="reset" class="btn btn-primary">
-								                      		Reset
-								                    	</button>
+											    		<%= f.submit "Update Details", class:'btn btn-success justified' %>
+											    		<%= link_to "Delete Client", client_path, method: :delete,data: { confirm: "Are you sure you want to delete " + @client.name + "?" } , class:'btn btn-danger'%>
 											 		</div>
 											  	</div>
 											</div> 

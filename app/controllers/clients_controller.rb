@@ -33,6 +33,17 @@ class ClientsController < ApplicationController
     end
   end
 
+  def destroy
+    @client = Client.find(params[:id])
+
+    if @client.destroy
+      redirect_to @client, notice: "Client Deleted :("
+    else
+      flash[:danger] = "Could not delete client"
+      render :edit
+    end
+  end
+
   private
 
   def client_params
