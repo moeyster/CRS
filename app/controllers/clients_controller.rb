@@ -19,6 +19,18 @@ class ClientsController < ApplicationController
   end
 
   def edit
+    @client = Client.find(params[:id])
+  end
+
+  def update
+    @client = Client.find(params[:id])
+    if @client.update_attributes(client_params)
+      flash[:success] = "Client " + @client.name + "'s details has been saved."
+      redirect_to clients_path
+    else
+      flash[:danger] = "Error: Client " + @client.name + "'s details could not be saved. Please try again."
+      render :edit
+    end
   end
 
   private

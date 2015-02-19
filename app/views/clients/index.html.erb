@@ -127,9 +127,9 @@ and (max-device-width : 480px) {
                     <td><%= c.mt4_id %></td>
                     <td><%= (c.updated_at + 8.hours).strftime("%d-%m-%Y %H:%M") %></td>
                     <td><%= number_to_currency(c.capital_sold) %></td>
-                    <td><button type="edit" class="btn btn-default justified">
-                          Edit
-                        </button></td>
+                    <td><%= link_to edit_client_path, class: 'btn btn-default justified' do %>
+                      Edit
+                      <% end %>
                   </tr>
                   <% end %>
                 </tbody>
