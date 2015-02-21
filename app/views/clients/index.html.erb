@@ -127,8 +127,7 @@ and (max-device-width : 480px) {
                     <td><%= c.mt4_id %></td>
                     <td><%= (c.updated_at + 8.hours).strftime("%d-%m-%Y %H:%M") %></td>
                     <td><%= number_to_currency(c.capital_sold) %></td>
-                    <td><%= link_to "Edit", edit_agent_client_path(c), class: 'btn btn-info' %></td>
-
+                    <td><%= link_to "Edit", edit_client_path(c), class: 'btn btn-info' %></td>
                   </tr>
                   <% end %>
                 </tbody>

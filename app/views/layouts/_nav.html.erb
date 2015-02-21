@@ -3,13 +3,21 @@
         <i class="glyphicon glyphicon-dashboard"></i><br>
         Dashboard
     <% end %>
-    <%= link_to new_agent_client_path(:agent_id), class: 'btn btn-info col-sm-3' do %>
+    <%= link_to new_client_path, class: 'btn btn-info col-sm-3' do %>
         <i class="glyphicon glyphicon-plus"></i><br>
         Add Client
     <% end %>
-    <a href="index.html" class="btn btn-info col-sm-3">
-        <i class="glyphicon glyphicon-log-out"></i><br>
-        Logout  
-    </a>
+
+    <% if agent_signed_in? %>
+        <%= link_to destroy_agent_session_path, method: :delete, class: 'btn btn-info col-sm-3' do %>
+                <i class="glyphicon glyphicon-log-out"></i><br>
+                Logout  
+        <% end %>
+    <% else %>
+        <%= link_to new_agent_session_path, class: 'btn btn-info col-sm-3' do %>
+                <i class="glyphicon glyphicon-log-in"></i><br>
+                Login
+        <% end %>
+    <% end %>
 </div>
 <hr>

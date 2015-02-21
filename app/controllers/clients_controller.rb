@@ -5,11 +5,12 @@ class ClientsController < ApplicationController
 
   def new
   	@client = Client.new
+    
   end
 
   def create
   	@client = Client.new(client_params)
-
+    @client.agent_id = current_agent.id 
   	if @client.save
   		redirect_to clients_path, notice: "Successfully added new client! Congratulations!"
   	else
@@ -47,6 +48,6 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-  	params.require(:client).permit(:name, :mt4_id, :capital_sold)	
+  	params.require(:client).permit(:name, :mt4_id, :capital_sold, :agent_id)	
   end
 end
