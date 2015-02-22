@@ -36,7 +36,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.3'
 
 # For Authentication
-
+gem 'cancancan', '~> 1.10'
 gem 'devise'
 
 group :development, :test do

@@ -130,7 +130,11 @@ and (max-device-width : 480px) {
                     <td><%= (c.updated_at + 8.hours).strftime("%d-%m-%Y %H:%M") %></td>
                     <td><%= number_to_currency(c.capital_sold) %></td>
                     <td><%= c.agent.name %></td>
-                    <td><%= link_to "Edit", edit_client_path(c), class: 'btn btn-info' %></td>
+                    <td>
+                      <% if can? :update, c %>
+                      <%= link_to "Edit", edit_client_path(c), class: 'btn btn-info' %>
+                      <% end %>
+                    </td>
                   </tr>
                   <% end %>
                 </tbody>

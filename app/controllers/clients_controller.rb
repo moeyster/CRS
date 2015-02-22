@@ -21,6 +21,7 @@ class ClientsController < ApplicationController
 
   def edit
     @client = Client.find(params[:id])
+    authorize! :update, @client
   end
 
   def update
