@@ -16,16 +16,21 @@
                     <%= render 'layouts/header' %>
                     <div class="col-sm-12">
                         <%= render 'layouts/nav' %>
+
                         <div class="col-sm-12">
+                            <% @goals.each do |g| %>
                             <div class="well">
-                                25 Client Goal
+                                Goal: <%= g.client_target %> Clients
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%">
-                                    <span class="sr-only">72% Complete</span>
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<%= @achieved_percent %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= @achieved_percent %>%">
+                                        <%= @achieved_percent %>% (<%= @totalClients %> / <%= g.client_target %>) 
                                     </div>
                                 </div>
+                                <%= link_to "Change Goal", edit_welcome_path(g), class: 'btn btn-info' %>
                             </div>
                         </div> 
+                        <% end %>
+
                         <% @agents.each do |agent| %>  
                             <div class="col-sm-3">
                                 <%= link_to welcome_path(agent) do %>
