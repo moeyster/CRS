@@ -25,49 +25,23 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>   
-                        <div class="col-sm-3">
-                            <a href="clientlistj.html">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h4>Jason</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <p><small>Total Clients: </small></p>
-                                        <p><strong>24</strong></p>
-                                        <p><small>Total Capital Sold: </small></p>
-                                        <p><strong>$30,000</strong></p>
-                                    </div>    
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-sm-3">
-                            <a href="clientliste.html">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h4>Eunice</h4>
-                                    </div>
-                                    <div class="panel-body">
-                                        <p><small>Total Clients: </small></p>
-                                        <p><strong>24</strong></p>
-                                        <p><small>Total Capital Sold: </small></p>
-                                        <p><strong>$30,000</strong></p>
-                                    </div>    
-                                </div>
-                            </a>
                         </div> 
-                        <div class="col-sm-3">
-                            <a href="clientlistt.html">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h4>Tony</h4>
+                        <% @agents.each do |agent| %>  
+                            <div class="col-sm-3">
+                                <%= link_to welcome_path(agent) do %>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><h4><%= agent.name %></h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p><small>Total Clients: </small></p>
+                                            <p><strong><%= agent.clients.count %></strong></p>
+                                            <p><small>Total Capital Sold: </small></p>
+                                            <p><strong><%= number_to_currency(agent.clients.sum(:capital_sold)) %></strong></p>
+                                        </div>    
                                     </div>
-                                    <div class="panel-body">
-                                        <p><small>Total Clients: </small></p>
-                                        <p><strong>24</strong></p>
-                                        <p><small>Total Capital Sold: </small></p>
-                                        <p><strong>$30,000</strong></p>
-                                    </div>    
-                                </div>
-                            </a>
-                        </div>
+                                <% end %>
+                            </div>
+                        <% end %>
                         <div class="col-sm-3">
                             <a href="clientlista.html">
                             <%= link_to clients_path do %>
