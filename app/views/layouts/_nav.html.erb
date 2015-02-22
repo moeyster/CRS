@@ -11,12 +11,12 @@
     <% if agent_signed_in? %>
         <%= link_to destroy_agent_session_path, method: :delete, class: 'btn btn-info col-sm-3' do %>
                 <i class="glyphicon glyphicon-log-out"></i><br>
-                Logout  
+                Sign Out  
         <% end %>
     <% else %>
         <%= link_to new_agent_session_path, class: 'btn btn-info col-sm-3' do %>
                 <i class="glyphicon glyphicon-log-in"></i><br>
-                Login
+                Sign In
         <% end %>
     <% end %>
 </div>
