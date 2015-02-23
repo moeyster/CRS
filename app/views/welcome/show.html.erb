@@ -102,9 +102,9 @@ and (max-device-width : 480px) {
           </div>
           <div class="panel-body">
                 <div class="row">
-                  <div class="col-sm-1">
+                  <!-- <div class="col-sm-1">
                     <select id="pac-input" class="form-control-justified"><option>Week</option><option>Month</option><option>All</option></select>
-                  </div>
+                  </div> -->
                   <div class="col-sm-3">
                     <%= form_tag(welcome_path, :method => "get", id: "pac-input", class: "controls") do %>
                       <%= text_field_tag :search, params[:search], placeholder: "Search" %>
@@ -112,10 +112,10 @@ and (max-device-width : 480px) {
                     <% end %>
                   </div>
                      
-                    <button type="email" class="btn btn-danger justified">
+                    <button type="email" class="btn btn-danger justified" disabled="disabled">
                         Email
                     </button>
-                    <button type="doanload" class="btn btn-danger justified">
+                    <button type="doanload" class="btn btn-danger justified" disabled="disabled">
                         Download
                     </button>
                 </div>     
