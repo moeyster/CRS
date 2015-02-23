@@ -29,6 +29,7 @@
 				<div class="form-group">
 				    <div class="controls">
 				    	<%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Confirm Password', autocomplete: "off" %>
+				    	<%= f.hidden_field :admin, :value => false %>
 				  	</div>
 				</div>   
 				<div class="form-group">

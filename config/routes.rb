@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :agents
+  devise_for :agents, controllers: { confirmmations: 'confirmations'}
 
   resources :clients
   resources :welcome

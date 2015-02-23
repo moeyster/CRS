@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   	if agent_signed_in?
   		@goals = Goal.all
   		@achieved_percent = (Client.count*100)/@goals.first.client_target
-  		@agents = Agent.where("id != '8'")
+  		@agents = Agent.where("admin = false")
 	  	@clients = Client.all
 	  	@totalClients = Client.count
 	  	@totalCapitalSold = Client.sum(:capital_sold)
