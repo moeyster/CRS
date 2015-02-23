@@ -1,6 +1,10 @@
 class ClientsController < ApplicationController
   def index
-  	@clients = Client.all.order(updated_at: :desc)
+  	if params[:search]
+      @clients = Client.search(params[:search]).order(updated_at: :desc)
+    else
+      @clients = Client.all.order(updated_at: :desc)
+    end
   end
 
   def new

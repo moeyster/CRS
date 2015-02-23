@@ -13,7 +13,13 @@ class WelcomeController < ApplicationController
   end
 
   def show
-  	@agent = Agent.find(params[:id])
+    @agent = Agent.find(params[:id])
+
+    if params[:search]
+      @clients = @agent.clients.search(params[:search]).order(updated_at: :desc)
+    else
+      @clients = @agent.clients.order(updated_at: :desc)
+    end
   end
 
   def edit
