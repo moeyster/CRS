@@ -78,8 +78,16 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: CRS_production
+#   username: CRS
+#   password: <%= ENV['CRS_DATABASE_PASSWORD'] %>
+
+
 production:
-  <<: *default
-  database: CRS_production
-  username: CRS
-  password: <%= ENV['CRS_DATABASE_PASSWORD'] %>
+adapter: mysql
+database: smits_crs
+host: localhost
+username: smits_crs
+password: mochago260314
