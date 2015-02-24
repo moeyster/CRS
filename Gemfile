@@ -27,14 +27,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 # For hostagtor
-gem 'rake', '~> 0.8.3'
-gem 'rack', '~> 1.1.0'
-gem 'i18n', '~> 0.4.2'
+gem 'rake', '~> 10.4.2'
+gem 'rack', '~> 1.6.0'
+gem 'i18n', '~> 0.7.0'
 gem 'rubytree', '~> 0.5.2', :require => 'tree'
 gem 'RedCloth', '~> 4.2.3', :require => 'redcloth' # for CodeRay
 gem 'mysql'
 gem 'coderay', '~> 0.9.7'
-gem 'rdoc', '~> 2.4.2'
+gem 'rdoc', '~> 4.2.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
