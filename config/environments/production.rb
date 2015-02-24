@@ -98,4 +98,4 @@ Rails.application.configure do
   :authentication => ENV['MAIL_AUTHENTICATION'],
   :enable_starttls_auto => true
 }
-# end
+end
