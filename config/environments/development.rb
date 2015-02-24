@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # For mailer functionality
-  config.action_mailer.default_url_options = { host:'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host:'crsbysm.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :user_name => '2558759e72b6537ed',
