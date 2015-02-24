@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 agent = Agent.create(email: "admin@gmail.com", password: "crsAdmin##", name: "CRS Admin", admin: true)
+goal = Goal.create(client_target: 25)
