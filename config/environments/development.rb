@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -42,20 +42,22 @@ Rails.application.configure do
   # For mailer functionality
   config.action_mailer.default_url_options = { host:'crsbysm.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  :user_name => '2558759e72b6537ed',
-  :password => '66072ddaef5445',
-  :address => 'mailtrap.io',
-  :domain => 'mailtrap.io',
-  :port => '2525',
-  :authentication => :cram_md5
-}
+
 #   config.action_mailer.smtp_settings = {
-#   :user_name => ENV['MAILTRAPUSERNAME'],
-#   :password => ENV['MAILTRAPPASSWORD'],
-#   :address => ENV['MAILTRAPADDRESS'],
-#   :domain => ENV['MAILTRAPDOMAIN'],
-#   :port => ENV['MAILTRAPPORT'],
-#   :authentication => ENV['MAILTRAPAUTHENTICATION']
+#   :user_name => '2558759e72b6537ed',
+#   :password => '66072ddaef5445',
+#   :address => 'mailtrap.io',
+#   :domain => 'mailtrap.io',
+#   :port => '2525',
+#   :authentication => :cram_md5
 # }
+  config.action_mailer.smtp_settings = {
+  :user_name => ENV['MAIL_USERNAME'],
+  :password => ENV['MAIL_PASSWORD'],
+  :address => ENV['MAIL_ADDRESS'],
+  :domain => ENV['MAIL_DOMAIN'],
+  :port => ENV['MAIL_PORT'],
+  :authentication => ENV['MAIL_AUTHENTICATION'],
+  :enable_starttls_auto => true
+}
 end
