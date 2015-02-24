@@ -52,3 +52,10 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+	# For heroku
+  gem 'rails_12factor'
+end
+
+
+
