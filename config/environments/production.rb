@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # For mailer functionality
-  config.action_mailer.default_url_options = { host:'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host:'crs.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   :user_name => '2558759e72b6537ed',
