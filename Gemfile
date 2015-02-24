@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
-gem 'pg'
+# gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -25,6 +25,16 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# For hostagtor
+gem "rake", "0.8.3"
+gem "rack", "1.1.0"
+gem "i18n", "0.4.2"
+gem "rubytree", "0.5.2", :require => "tree"
+gem "RedCloth", "~>4.2.3", :require => "redcloth" # for CodeRay
+gem "mysql"
+gem "coderay", "~>0.9.7"
+gem "rdoc", "~>2.4.2"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -58,14 +68,6 @@ end
 group :production do
 	# For heroku
   gem 'rails_12factor'
-  gem "rake", "0.8.3"
-  gem "rack", "1.1.0"
-  gem "i18n", "0.4.2"
-  gem "rubytree", "0.5.2", :require => "tree"
-  gem "RedCloth", "~>4.2.3", :require => "redcloth" # for CodeRay
-  gem "mysql"
-  gem "coderay", "~>0.9.7"
-  gem "rdoc", "~>2.4.2"
 end
 
 
